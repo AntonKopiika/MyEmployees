@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import demo.com.myemployees.pojo.Employee;
 
-@Database(entities = {Employee.class}, version = 1, exportSchema = false)
+@Database(entities = {Employee.class}, version = 2, exportSchema = false)
 public abstract class EmployeeDatabase extends RoomDatabase {
     private static EmployeeDatabase employeeDatabase;
     private static final String DB_NAME = "employees.db";
@@ -17,7 +17,7 @@ public abstract class EmployeeDatabase extends RoomDatabase {
     public static EmployeeDatabase getInstance(Context context) {
         synchronized (LOCK) {
             if (employeeDatabase == null) {
-                employeeDatabase = Room.databaseBuilder(context, EmployeeDatabase.class, DB_NAME).build();
+                employeeDatabase = Room.databaseBuilder(context, EmployeeDatabase.class, DB_NAME).fallbackToDestructiveMigration().build();
             }
 
             return employeeDatabase;

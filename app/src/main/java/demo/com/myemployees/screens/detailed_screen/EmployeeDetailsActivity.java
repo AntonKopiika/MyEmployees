@@ -53,6 +53,7 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
             else {
                 Picasso.get().load(R.drawable.placeholder).into(imageViewAvatar);
             }
+            textViewSpecialty.setText(employee.getSpecialty().get(0).getName());
         }
 
     }

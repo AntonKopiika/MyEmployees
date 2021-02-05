@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.siyamed.shapeimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import demo.com.myemployees.R;
@@ -20,7 +21,7 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
     private TextView textViewBirthday;
     private TextView textViewSpecialty;
     private EmployeeViewModel viewModel;
-    private ImageView imageViewAvatar;
+    private CircularImageView imageViewAvatar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

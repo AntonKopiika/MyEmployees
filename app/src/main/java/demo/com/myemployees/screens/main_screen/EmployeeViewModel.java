@@ -46,12 +46,12 @@ public class EmployeeViewModel extends AndroidViewModel {
                 });
         compositeDisposable.add(disposable);
     }
-
-    @Override
-    protected void onCleared() {
-        compositeDisposable.dispose();
-        super.onCleared();
-    }
+//
+//    @Override
+//    protected void onCleared() {
+//        compositeDisposable.dispose();
+//        super.onCleared();
+//    }
 
     public EmployeeViewModel(@NonNull Application application) {
         super(application);

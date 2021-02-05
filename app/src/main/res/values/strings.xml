@@ -4,4 +4,5 @@
     <string name="label_last_name">Фамилия:</string>
     <string name="birthday_label">День рождения:</string>
     <string name="specialty_label">Специальность:</string>
+    <string name="employee_photo_description">Employee\'s photo</string>
 </resources>

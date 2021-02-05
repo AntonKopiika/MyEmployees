@@ -22,4 +22,6 @@ public interface EmployeeDao {
     @Query("DELETE FROM employees")
     void deleteAllEmployees();
 
+    @Query("SELECT * FROM employees WHERE id==:ID")
+    Employee getEmployeeByID(int ID);
 }

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MyEmployees</string>
+    <string name="app_name">My Employees</string>
+    <string name="label_name">Имя:</string>
+    <string name="label_last_name">Фамилия:</string>
+    <string name="birthday_label">День рождения:</string>
+    <string name="specialty_label">Специальность:</string>
 </resources>

@@ -1,4 +1,4 @@
-package demo.com.myemployees.screens;
+package demo.com.myemployees.screens.main_screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -6,13 +6,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.List;
 
 import demo.com.myemployees.R;
 import demo.com.myemployees.adapters.EmployeeAdapter;
 import demo.com.myemployees.pojo.Employee;
+import demo.com.myemployees.screens.detailed_screen.EmployeeDetailsActivity;
 
 public class EmployeesListActivity extends AppCompatActivity {
     private RecyclerView recyclerViewEmployees;
@@ -34,5 +37,14 @@ public class EmployeesListActivity extends AppCompatActivity {
             }
         });
         viewModel.loadData();
+        adapter.setOnCardClickListener(new EmployeeAdapter.OnCardClickListener() {
+            @Override
+            public void onCardClick(int position) {
+                Intent intent=new Intent(getApplicationContext(), EmployeeDetailsActivity.class);
+                int id =adapter.getEmployees().get(position).getId();
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }
+        });
     }
 }
